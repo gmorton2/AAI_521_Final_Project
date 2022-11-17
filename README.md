@@ -7,7 +7,7 @@ To run the project first clone the repository
 
 ```
 git init
-git clone 
+git clone https://github.com/gmorton2/AAI_521_Final_Project.git
 ```
  
 ## Project Intro/Objective
