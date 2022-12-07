@@ -21,11 +21,11 @@ Black Jack Card Counting with Computer Vision will aid the user playing black ja
 
 ## Methods Used
 Computer Vision
-Deep Learning
 
 ## Technologies
-Python
-Tensorflow
+- Python
+- Tensorflow
+- keras
 
 ## Project Description
 Black Jack Card Counting with Computer Vision will identify all cards played between the shuffling of a single deck. Then provide a suggestion whether or not to stay or hit your current hand. Finally, it will suggest either a high or low bet on the next hand. Input from the user will be required to indicate a newly shuffled deck is in play. The program will assume heads up play between a single player and the dealer.
