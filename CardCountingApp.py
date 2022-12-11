@@ -24,7 +24,7 @@ def main():
 
     # project description section
     with project_description:
-        st.header("Project Description")
+        st.subheader("Project Description")
         st.write("This application is meant to show that computer vision ",
             "and AI can be use to aid Blackjack players win.",
             "The application uses a model trained with a Convolutional Neural Network ",
@@ -33,12 +33,20 @@ def main():
     # dataset description section
     with dataset_description:
         st.subheader("Dataset")
-        st.write("The dataset comes from")
-        st.write("[The Complete Playing Cards](https://kaggle.com)")
+        st.write("When utilizing deep learning model, ",
+        "it is necessary to have an adequate data to train the model.",
+        "That is the reason this project uses the dataset from, "
+        "[The Complete Playing Cards](https://www.kaggle.com/datasets/jaypradipshah/the-complete-playing-card-dataset).",
+        "This Kaggle repository was choosen because is provides a large dataset ",
+        "that can be used with some image augmentation techniques ",
+        "to generalize a model with high accuracy.",
+        "The dataset contains over 2000 images where it has 50 images of each card.")
 
     # model training section
     with model_training:
         st.subheader("Model Training")
+        st.write("Different techniques were considered for model training, "
+        "but in the end the method that gave the best result was the Deep CNN.")
 
     # model results section
     with model_result:
