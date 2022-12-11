@@ -9,6 +9,16 @@ To run the project first clone the repository
 git init
 git clone https://github.com/gmorton2/AAI_521_Final_Project.git
 ```
+Then install all requirements using the *requirements.txt* file
+
+```
+pip install -r requirements.txt
+```
+Then you can run the simulation with the command below
+
+```
+streamlit run CardCountingApp.py
+```
  
 ## Project Intro/Objective
 
