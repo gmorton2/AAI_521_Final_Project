@@ -1,5 +1,6 @@
 import streamlit as st
 import logging
+from PIL import Image
 #import Blackjack_model as blackjack
 
 target_dict={'10C': 0,
@@ -104,6 +105,15 @@ def main():
     # model results section
     with model_result:
         st.subheader("Model Result")
+        st.write("The model is promising because it has a 98% accuracy. The images below show ",
+        "the learning curves i.e. the accuracy and loss curves of the model over the 15 epochs.",
+        "")
+        image = Image.open('LearningCurves.png')
+        st.image(image, caption='Learning Curves')
+
+        st.write("Because of these values wee believe that our model can be use is multiple ",
+        "scenarios one of this is this web application, but it can be embedded in other ",
+        "devices.")
 
     # demo section
     with demo_section:
