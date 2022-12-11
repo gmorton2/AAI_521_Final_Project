@@ -11,24 +11,42 @@ from streamlit_webrtc import (
 logger = logging.getLogger(__name__)
 
 def main():
+    header_section = st.container()
+    project_description = st.container()
+    dataset_description = st.container()
+    model_training = st.container()
+    model_result = st.container()
+    demo_section = st.container()
 
-    st.title("Blackjack Card Counting with Computer Vision")
+    # header section
+    with header_section:
+         st.title("Blackjack Card Counting with Computer Vision")
 
     # project description section
-    with st.container():
-        st.text("This application is meant to show that computer vision " +
-            "and AI can be use to aid Blackjack players win.")
-        st.text("The application uses a model trained with a Convolutional Neural Network " +
+    with project_description:
+        st.header("Project Description")
+        st.write("This application is meant to show that computer vision ",
+            "and AI can be use to aid Blackjack players win.",
+            "The application uses a model trained with a Convolutional Neural Network ",
             "to keep a running count of the cards seen and suggest the next best moved.")
 
     # dataset description section
-    with st.container():
-        st.text("The dataset comes from")
-        st.markdown("[The Complete Playing Cards](https://kaggle.com)")
+    with dataset_description:
+        st.subheader("Dataset")
+        st.write("The dataset comes from")
+        st.write("[The Complete Playing Cards](https://kaggle.com)")
 
-# model training section
+    # model training section
+    with model_training:
+        st.subheader("Model Training")
 
-# model results section
+    # model results section
+    with model_result:
+        st.subheader("Model Result")
+
+    # demo section
+    with demo_section:
+        st.subheader("Demo")
 
 # live demo
 def app_sendonly_video():
