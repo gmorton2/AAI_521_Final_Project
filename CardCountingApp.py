@@ -1,14 +1,6 @@
 import streamlit as st
 import logging
-# import queue
-import Blackjack_model as blackjack
-
-# from streamlit_webrtc import (
-#     RTCConfiguration,
-#     WebRtcMode,
-#     WebRtcStreamerContext,
-#     webrtc_streamer,
-# )
+#import Blackjack_model as blackjack
 
 target_dict={'10C': 0,
  '10D': 1,
@@ -119,35 +111,8 @@ def main():
         st.write("Press the button belows to see a simulated game.")
         new_game = st.button("New Game")
 
-        if new_game:
-            blackjack.black_jack(target_dict)
-
-# # live demo
-# def app_sendonly_video():
-#     """A sample to use WebRTC in sendonly mode to transfer frames
-#     from the browser to the server and to render frames via `st.image`."""
-#     webrtc_ctx = webrtc_streamer(
-#         key="video-sendonly",
-#         mode=WebRtcMode.SENDONLY,
-#         rtc_configuration=RTC_CONFIGURATION,
-#         media_stream_constraints={"video": True},
-#     )
-
-#     image_place = st.empty()
-
-#     while True:
-#         if webrtc_ctx.video_receiver:
-#             try:
-#                 video_frame = webrtc_ctx.video_receiver.get_frame(timeout=1)
-#             except queue.Empty:
-#                 logger.warning("Queue is empty. Abort.")
-#                 break
-
-#             img_rgb = video_frame.to_ndarray(format="rgb24")
-#             image_place.image(img_rgb)
-#         else:
-#             logger.warning("AudioReciver is not set. Abort.")
-#             break
+        #if new_game:
+            #blackjack.black_jack(target_dict)
 
 if __name__ == "__main__":
     import os
