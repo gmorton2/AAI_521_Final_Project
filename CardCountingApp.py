@@ -1,60 +1,7 @@
 import streamlit as st
 import logging
 from PIL import Image
-#import Blackjack_model as blackjack
-
-target_dict={'10C': 0,
- '10D': 1,
- '10H': 2,
- '10S': 3,
- '2C': 4,
- '2D': 5,
- '2H': 6,
- '2S': 7,
- '3C': 8,
- '3D': 9,
- '3H': 10,
- '3S': 11,
- '4C': 12,
- '4D': 13,
- '4H': 14,
- '4S': 15,
- '5C': 16,
- '5D': 17,
- '5H': 18,
- '5S': 19,
- '6C': 20,
- '6D': 21,
- '6H': 22,
- '6S': 23,
- '7C': 24,
- '7D': 25,
- '7H': 26,
- '7S': 27,
- '8C': 28,
- '8D': 29,
- '8H': 30,
- '8S': 31,
- '9C': 32,
- '9D': 33,
- '9H': 34,
- '9S': 35,
- 'AC': 36,
- 'AD': 37,
- 'AH': 38,
- 'AS': 39,
- 'JC': 40,
- 'JD': 41,
- 'JH': 42,
- 'JS': 43,
- 'KC': 44,
- 'KD': 45,
- 'KH': 46,
- 'KS': 47,
- 'QC': 48,
- 'QD': 49,
- 'QH': 50,
- 'QS': 51}
+import Blackjack_model as blackjack
 
 logger = logging.getLogger(__name__)
 
@@ -121,8 +68,8 @@ def main():
         st.write("Press the button belows to see a simulated game.")
         new_game = st.button("New Game")
 
-        #if new_game:
-            #blackjack.black_jack(target_dict)
+        if new_game:
+            blackjack.black_jack(blackjack.target_dict)
 
 if __name__ == "__main__":
     import os

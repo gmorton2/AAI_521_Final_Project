@@ -5,17 +5,59 @@ import os
 import random
 import cv2
 import math
-#from keras.preprocessing import image
-#from tensorflow.keras.preprocessing.image import ImageDataGenerator
-#import pickle  #to load a saved model
 
-# def load_pb(path_to_pb):
-#     with tf.gfile.GFile(path_to_pb, "rb") as f:
-#         graph_def = tf.GraphDef()
-#         graph_def.ParseFromString(f.read())
-#     with tf.Graph().as_default() as graph:
-#         tf.import_graph_def(graph_def, name='')
-#         return graph
+target_dict={'10C': 0,
+ '10D': 1,
+ '10H': 2,
+ '10S': 3,
+ '2C': 4,
+ '2D': 5,
+ '2H': 6,
+ '2S': 7,
+ '3C': 8,
+ '3D': 9,
+ '3H': 10,
+ '3S': 11,
+ '4C': 12,
+ '4D': 13,
+ '4H': 14,
+ '4S': 15,
+ '5C': 16,
+ '5D': 17,
+ '5H': 18,
+ '5S': 19,
+ '6C': 20,
+ '6D': 21,
+ '6H': 22,
+ '6S': 23,
+ '7C': 24,
+ '7D': 25,
+ '7H': 26,
+ '7S': 27,
+ '8C': 28,
+ '8D': 29,
+ '8H': 30,
+ '8S': 31,
+ '9C': 32,
+ '9D': 33,
+ '9H': 34,
+ '9S': 35,
+ 'AC': 36,
+ 'AD': 37,
+ 'AH': 38,
+ 'AS': 39,
+ 'JC': 40,
+ 'JD': 41,
+ 'JH': 42,
+ 'JS': 43,
+ 'KC': 44,
+ 'KD': 45,
+ 'KH': 46,
+ 'KS': 47,
+ 'QC': 48,
+ 'QD': 49,
+ 'QH': 50,
+ 'QS': 51}
 
 model_path = "Black_Jack/card_trained_model/card_trained_model"
 #new_model = tf.saved_model.load(model_path)
@@ -154,12 +196,6 @@ def image_transformation(deck_folder, file):
     img = cv2.resize(image, (180, 180))
     img_transformed = img.reshape((1, img.shape[0], img.shape[1], 1))
     return img_transformed
-    #data_generator = ImageDataGenerator(rotation_range=90, brightness_range=(0.5, 1.5), shear_range=15.0, zoom_range=[.3, .8])
-    #data_generator.fit(imgs)
-    #image_iterator = data_generator.flow(imgs)
-    # img_transformed=image_iterator.next()[0].astype('int')/255
-    # img_transformed = img_transformed.reshape((1, img.shape[0], img.shape[1], 1))
-    # return img_transformed
 
 def predict_image(img_transformed, target_dict):
     prediction = new_model.predict(img_transformed)
@@ -210,7 +246,7 @@ def black_jack(target_dict):
     num_of_units = bank_roll/bet_unit
     
     while cards_in_play < shuffle_limit or bank_roll <= 0:
-        deck_folder='Black_Jack/deck'
+        deck_folder='Black_Jack/deck/deck'
         num_of_cards=0
         bank_roll_float = "{:.2f}".format(bank_roll)
         print('\n------------------------------------------------------------------')
